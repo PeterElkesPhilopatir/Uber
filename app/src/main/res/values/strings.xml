@@ -7,4 +7,6 @@
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
     <string name="firestore_collection">Source</string>
+    <string name="header_title">UBER</string>
+    <string name="header_text">Welcome</string>
 </resources>
