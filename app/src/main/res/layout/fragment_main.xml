@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/my_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:ignore="HardcodedText">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapFragment">
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp"
+                app:cardMaxElevation="12dp"
+                app:cardUseCompatPadding="true">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/gray"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <!--            <ImageView-->
+                    <!--                android:layout_width="wrap_content"-->
+                    <!--                android:src="@drawable/ic_menu"-->
+                    <!--                android:layout_margin="10dp"-->
+
+                    <!--                android:layout_height="wrap_content"/>-->
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        app:layout_scrollFlags="scroll|enterAlways"
+                        android:visibility="visible"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
+                        android:minHeight="?attr/actionBarSize"
+                        app:navigationIcon="@drawable/ic_menu"
+                        app:title="">
+                    </androidx.appcompat.widget.Toolbar>
+
+
+                    <AutoCompleteTextView
+                        android:text="@={viewModel.selectedSourceName}"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/your_location"
+                        android:id="@+id/source_location_edt"
+                        android:background="@drawable/rounded_edittext"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+
+                    <AutoCompleteTextView
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/destination"
+                        android:id="@+id/destination_Edt"
+                        android:background="@drawable/rounded_edittext"
+                        android:clickable="true"
+                        android:focusable="true"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/requestBTN"
+                android:onClick="@{()->viewModel.chooseTaxi()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_button"
+                android:elevation="5dp"
+                android:gravity="center"
+                android:text="Request RD"
+
+                android:textAllCaps="false"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+                android:theme="@style/FormButton"
+
+                />
+
+        </RelativeLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:menu="@menu/nav_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <data>
+<variable
+    name="viewModel"
+    type="com.peter.uber.ui.main.MainViewModel" />
+    </data>
+</layout>

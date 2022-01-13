@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_location">Your Location</string>
+    <string name="destination">Destination</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+    <string-array name="Languages">
+        <item>Java</item>
+        <item>Kotlin</item>
+        <item>Swift</item>
+        <item>Python</item>
+        <item>Scala</item>
+        <item>Perl</item>
+        <item>Javascript</item>
+        <item>Jquery</item>
+    </string-array>
+</resources>
